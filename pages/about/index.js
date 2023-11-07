@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Navbar from './Components/Navbar';
+import Navbar from './components/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,14 +15,12 @@ const About = ({ data }) => {
       <h1>Ini Halaman About</h1>
       {data.map((item) => (
         <div key={item.id}>
-          <Link href={`/about/${item.id}`}>
-            <h2>{item.name}</h2>
-          </Link>
+          <h2>{item.name}</h2>
         </div>
       ))}
     </>
   );
-};
+}
 
 export default About;
 
@@ -34,5 +32,5 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
-  };
+    };
 };
